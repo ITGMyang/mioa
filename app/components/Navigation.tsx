@@ -29,13 +29,15 @@ const Navbar = () => {
 			name: 'Services',
 			link: './service',
 		},
+
 		{
-			name: 'Pricing',
-			link: '#',
+			name: 'About',
+			link: './about',
 		},
+
 		{
 			name: 'Contact',
-			link: '#',
+			link: './contact',
 		},
 	];
 

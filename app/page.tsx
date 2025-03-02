@@ -18,7 +18,8 @@ export default function Page() {
 					height={300}
 				/>
 			</div>
-			<div className='w-2/3 mt-12 grid grid-cols-4 gap-2 content-center justify-center justify-items-center'>
+
+			<div className='w-2/3 mt-12 grid grid-cols-1 gap-2 content-center justify-center justify-items-center sm:grid-cols-4'>
 				<Image
 					src='/Dog1.png'
 					alt='Dog Grooming Banner'
