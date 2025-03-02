@@ -47,7 +47,7 @@ const Navbar = () => {
 	);
 };
 
-const DesktopNav = ({ navItems }: any) => {
+const DesktopNav = ({ navItems }: { navItems: NavItem[] }) => {
 	const [hovered, setHovered] = useState<number | null>(null);
 	return (
 		<motion.div
@@ -60,7 +60,7 @@ const DesktopNav = ({ navItems }: any) => {
 			)}>
 			<Logo />
 			<div className='lg:flex flex-row flex-1 hidden items-center justify-center space-x-2 lg:space-x-2 text-sm text-zinc-600 font-medium hover:text-zinc-800 transition duration-200'>
-				{navItems.map((navItem: any, idx: number) => (
+				{navItems.map((navItem: NavItem, idx: number) => (
 					<Link
 						onMouseEnter={() => setHovered(idx)}
 						className='text-neutral-600 dark:text-neutral-300 relative px-4 py-2'
@@ -83,7 +83,12 @@ const DesktopNav = ({ navItems }: any) => {
 	);
 };
 
-const MobileNav = ({ navItems }: any) => {
+interface NavItem {
+	name: string;
+	link: string;
+}
+
+const MobileNav = ({ navItems }: { navItems: NavItem[] }) => {
 	const [open, setOpen] = useState(false);
 
 	return (
@@ -118,7 +123,7 @@ const MobileNav = ({ navItems }: any) => {
 							animate={{ opacity: 1 }}
 							exit={{ opacity: 0 }}
 							className='flex rounded-lg absolute top-16 bg-white dark:bg-neutral-950 inset-x-0 z-20 flex-col items-start justify-start gap-4 w-full px-4 py-8'>
-							{navItems.map((navItem: any, idx: number) => (
+							{navItems.map((navItem: NavItem, idx: number) => (
 								<Link
 									key={`link=${idx}`}
 									href={navItem.link}

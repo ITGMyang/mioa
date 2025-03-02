@@ -108,7 +108,13 @@ export const ProductItem = ({
 	);
 };
 
-export const HoveredLink = ({ children, ...rest }: any) => {
+import { LinkProps } from 'next/link';
+
+interface HoveredLinkProps extends LinkProps {
+	children: React.ReactNode;
+}
+
+export const HoveredLink = ({ children, ...rest }: HoveredLinkProps) => {
 	return (
 		<Link
 			{...rest}
