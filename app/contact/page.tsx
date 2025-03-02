@@ -1,4 +1,3 @@
-import Image from 'next/image';
 export default function Page() {
 	return (
 		<div className='grid gap-8 place-content-center place-items-center'>
